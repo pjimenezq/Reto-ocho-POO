@@ -9,7 +9,9 @@ Be creative
 Para este reto, decidí aplicar el uso de decoradores en el primer punto del [Reto 3](https://github.com/pjimenezq/Reto-tres-POO). Se creó un decorador que permite que se validen las entradas de las funciones y de esta forma evitar errores en el programa.
 
 En este caso, el decorador extiende la funcionalidad de los métodos en tanto permite levantar una excepción ValueError cuando se ingresan datos que no son numéricos.
-'''
+
+**Código**
+```
 def validar_inputs(func):
     def funcion_interna(*args):
         bandera=True
@@ -21,7 +23,7 @@ def validar_inputs(func):
         return func(*args)
     return funcion_interna 
 
-```
+
 class Point:
     @validar_inputs
     def __init__(self, x:float, y:float):
