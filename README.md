@@ -128,7 +128,7 @@ class Square(Rectangle):
     def __init__(self, method:int, *args):
         super().__init__(method, *args)
 try:
-    point = Point("-8",-2)
+    point = Point("-8","-2")
     rectangle_one = Rectangle(1, -10, -4, 10, 6) #method, bottom-left.x, bottom-left.y, width, height
     rectangle_two = Rectangle(2, -5,-2,10,8) #method, center.x, center.y, width, height
     rectangle_three = Rectangle(3, 8,-2,-4,8)#method, opposite1.x, opposite1.y, opposite2.x, opposite2.y
@@ -168,3 +168,5 @@ try:
 except ValueError as error:
     print("Error: " + str(error))
 ```
+
+Al probar este código, en el que a propósito se introdujeron atributos de tipo string al objeto Point, se puede observar que en efecto el decorador lleva a que se levante el error ValueError y se imprima el mensaje: "Error: All arguments must be integers or decimals.".
